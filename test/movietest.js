@@ -22,5 +22,10 @@ describe('Movie', function() {
     var nightmare = new Movie("Nightmare on Elm Street", 1984);
 
     expect(rosemary.comparison(nightmare)).to.equal("Rosemary's Baby was better!");
+  }),
+
+  it('should have a to string method', function() {
+    var avatar = new Movie("Avatar", 2009)
+    expect(avatar.toString()).to.equal("Avatar, 2009");
   });
 });
