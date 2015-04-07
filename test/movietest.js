@@ -12,15 +12,20 @@ describe('Movie', function() {
   it('should have a method that calculates a rating', function() {
     var memento = new Movie('Memento', 2000);
 
-    memento.create_rating();
-
-    expect(memento).to.have.property('rating').that.equals(10);
+    memento.rating();
+    expect(memento).to.have.property('rating');
+    expect(memento.rating()).to.equal(10);
   }),
 
   it('should have a method that can compare ratings', function() {
     var rosemary = new Movie("Rosemary's Baby", 1968);
     var nightmare = new Movie("Nightmare on Elm Street", 1984);
 
-    expect(memento.compare(nightmare)).to.equal("Rosemary's Baby was better!");
+    expect(rosemary.comparison(nightmare)).to.equal("Rosemary's Baby was better!");
+  }),
+
+  it('should have a to string method', function() {
+    var avatar = new Movie("Avatar", 2009)
+    expect(avatar.toString()).to.equal("Avatar, 2009");
   });
 });
